@@ -18,21 +18,21 @@ using namespace std;
 
 class ImageLoader
 {
-	public:
-		ImageLoader();
-		virtual 		~ImageLoader();
+public:
+    ImageLoader();
+    virtual 		~ImageLoader();
 
-		static bool		loadMagickFile(
-							string& 				fileName,
-							vector<RGBColour>&		buffer,
-							int&					width,
-							int&					height );
+    static bool		loadMagickFile(
+        string& 				fileName,
+        vector<RGBColour>&		buffer,
+        int&					width,
+        int&					height );
 
-		static bool		saveMagickFile(
-							string& 				fileName,
-							vector<char>&			buffer,
-							int&					width,
-							int&					height );
+    static bool		saveMagickFile(
+        string& 				fileName,
+        vector<char>&			buffer,
+        int&					width,
+        int&					height );
 };
 
 #endif /* IMAGELOADER_H_ */

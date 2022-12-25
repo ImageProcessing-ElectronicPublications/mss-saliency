@@ -35,23 +35,23 @@ endif
 
 -include ../makefile.defs
 
+TARGET = SaliencyDetector
+CXX = g++
+CXXFLAGS += `pkg-config --cflags Magick++`
+LDFLAGS += `pkg-config --libs Magick++`
+
 # Add inputs and outputs from these tool invocations to the build variables
 
 # All Target
-all: SaliencyDetector
+all: $(TARGET)
 
 # Tool invocations
-SaliencyDetector: $(OBJS) $(USER_OBJS)
-	@echo 'Building target: $@'
-	@echo 'Invoking: GCC C++ Linker'
-	g++ `Magick++-config --cppflags --cxxflags` -o"SaliencyDetector" $(OBJS) $(USER_OBJS) $(LIBS) `Magick++-config --ldflags --libs`
-	@echo 'Finished building target: $@'
-	@echo ' '
+$(TARGET): $(OBJS) $(USER_OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LIBS) $(LDFLAGS)
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C++_DEPS)$(C_DEPS)$(CC_DEPS)$(CPP_DEPS)$(EXECUTABLES)$(CXX_DEPS)$(C_UPPER_DEPS) SaliencyDetector
-	-@echo ' '
+	-$(RM) $(OBJS)$(C++_DEPS)$(C_DEPS)$(CC_DEPS)$(CPP_DEPS)$(EXECUTABLES)$(CXX_DEPS)$(C_UPPER_DEPS) $(TARGET)
 
 .PHONY: all clean dependents
 .SECONDARY:

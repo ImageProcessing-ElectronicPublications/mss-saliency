@@ -1,5 +1,6 @@
-Regions of Interest Maximum Symmetric Surround Saliency Algorithm
-============
+# MSS-saliency
+
+Regions of Interest Maximum Symmetric Surround Saliency Algorithm.
 
 ## Quick Start Guide
 
@@ -39,18 +40,20 @@ There are up-to-date precompiled OSX binaries of SaliencyDetector available in t
 ## Examples
 
 **Success Meme Baby**
-[![Success Meme Baby](imagedemo/success-meme-baby.jpg)](https://raw.github.com/technopagan/mss-saliency/master/imagedemo/success-meme-baby.jpg)
+![Success Meme Baby](https://raw.githubusercontent.com/ImageProcessing-ElectronicPublications/mss-saliency-demo/main/image/success-meme-baby.jpg)
 Let's look at the famous "Success!" baby photo as a quick demo of our saliency detector.
 
 **Success Meme Baby, saliency mapped**
-[![Success Meme Baby Saliency Mapped](imagedemo/success-meme-baby-salient.jpg)](https://raw.github.com/technopagan/mss-saliency/master/imagedemo/success-meme-baby-salient.jpg)
+![Success Meme Baby Saliency Mapped](https://raw.githubusercontent.com/ImageProcessing-ElectronicPublications/mss-saliency-demo/main/image/success-meme-baby-salient.jpg)
 This is the native output of MSSS.
 
 **Success Meme Baby, salient two colors**
-[![Success Meme Baby Saliency Mapped 2 Colors](imagedemo/success-meme-baby-salient-2color.jpg)](https://raw.github.com/technopagan/mss-saliency/master/imagedemo/success-meme-baby-salient-2color.jpg)
+![Success Meme Baby Saliency Mapped 2 Colors](https://raw.githubusercontent.com/ImageProcessing-ElectronicPublications/mss-saliency-demo/main/image/success-meme-baby-salient-2color.jpg)
 Here we used the inbuilt --threshold switch to reduce the saliency map to only 2-color black and white pixels, which makes the salient regions very easy to detect programmatically.
 
 Note how the saliency detector has successfully ignored the background as well as monotone areas in the foreground so that only detailed, multicolored areas stay as parts of the regions of interest. This way, processes like adaptive compression have an awesome basis to operate on.
+
+See demo images files in [Demo images for MSS-saliency](https://github.com/ImageProcessing-ElectronicPublications/mss-saliency-demo)
 
 ## Credits
 

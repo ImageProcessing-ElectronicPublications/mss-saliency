@@ -18,13 +18,13 @@ CPP_DEPS += \
 ./src/SaliencyDetector.d \
 ./src/SymmetricSurroundSaliency.d 
 
+CXX = g++
+CXXFLAGS = -O0 -march=native -g3 -Wall -fmessage-length=0
+MFLAGS = `pkg-config --cflags --libs Magick++`
+VFLAGS = -v -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)"
 
 # Each subdirectory must supply rules for building sources it contributes
 src/%.o: ../src/%.cpp
-	@echo 'Building file: $<'
-	@echo 'Invoking: GCC C++ Compiler'
-	g++ -O0 -march=native -g3 -Wall -c -fmessage-length=0 `Magick++-config --cppflags --cxxflags --ldflags --libs` -v -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o"$@" "$<"
-	@echo 'Finished building: $<'
-	@echo ' '
+	$(CXX) $(CXXFLAGS) $(MFLAGS) $(VFLAGS) -c -o $@ $<
 
 
